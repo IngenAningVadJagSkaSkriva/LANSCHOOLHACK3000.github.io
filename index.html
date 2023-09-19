@@ -1,0 +1,36 @@
+<html>
+    <head>
+        <title>LANSCHOOL HACK 3000</title>
+        <link rel="icon" href="BerserkForest.jpg" type="image">
+        <script>
+            function RB(min, max) {
+       return Math.floor(Math.random() * (max - min + 1) + min)
+      }
+            var m = RB(5,8);
+            var sizeY = screen.height / m;
+            var sizeX = screen.width / m;
+            function please() {
+                
+                for(let i = 0; i < RB(2,10); i++) {
+                    m = RB(5,8);
+                    sizeY = screen.height / m;
+                    if(sizeY < 10) {
+                        sizeY = sizeX;
+                    }
+                    sizeX = screen.width / m;
+                    window.open('window.html','','HEIGHT=' + sizeY + ',WIDTH=' + sizeX)
+                }
+            }
+        </script>
+        <style>
+            .nono {
+                height: 90%;
+                width: 100%;
+            }
+        </style>
+    </head>
+    <body>
+        <img class="nono" src="no.jpg" alt="FUCK YOU" onclick="please()">
+        <input type="button" value="YOU CANT CLICK ME YOU FUCKING IDIOT DONT EVEN TRY!!!" onclick="please()">
+    </body>
+</html>

